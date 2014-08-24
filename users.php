@@ -61,8 +61,8 @@
 			while ($row = $result->fetch_assoc())
 			{
 				$num++;
-				$birthday = date("j ".$month[date("n", strtotime($row["birthday"]))]." Y", strtotime($row["birthday"]));
-				if (!strtotime($row["birthday"])) $birthday = '';
+				if ($row["birthday"] == '0000-00-00') $birthday = '';
+				else $birthday = date("j ".$month[date("n", strtotime($row["birthday"]))]." Y", strtotime($row["birthday"]));
 				$fullname = $row["surname"].' '.$row["firstname"].' '.$row["midname"];
 				$avatar = $row["login"].'.jpg';
 				if (!file_exists('images/avatars/'.$avatar)) $avatar = 'noAv.png';

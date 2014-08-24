@@ -18,8 +18,8 @@
 		$currUser = $result_currentUser->fetch_assoc();
 		$currUser["avatar"] = $_COOKIE["user"].'.jpg';
 		if (!file_exists('images/avatars/'.$currUser["avatar"])) $currUser["avatar"] = 'noAv.png';
-		$currBirthday = date("d.m.Y",strtotime($currUser["birthday"]));
-		if (!strtotime($currUser["birthday"])) $currBirthday = '';
+		if ($currUser["birthday"] == '0000-00-00') $currBirthday = '';
+		else $currBirthday = date("d.m.Y",strtotime($currUser["birthday"]));
 	}
 	
 	function printTop ($title)
