@@ -1,0 +1,686 @@
+body {
+	position: relative;
+	background-color: #ddd;
+	font-family: 'Segoe UI Light';
+	width: 900px;
+	margin: auto;
+	margin-bottom: 5px;
+	border-right: 1px solid #aaa;
+	border-left: 1px solid #00f;
+}
+nav {
+	position: fixed;
+	top: 0px;
+	width: 600px;
+	background-color: #025;
+	padding-left: 15px;
+	transition: width .5s;
+	height: 50px;
+	overflow: hidden;
+	z-index: 2;
+}
+nav .menu {
+	display: inline-block;
+	color: #fff;
+	text-decoration: none;
+	font-size: 16pt;
+	padding: 10px;
+}
+nav .menu:hover {
+	background-color: #237;
+	color: #ffd;
+	border-bottom: solid 3px #55f;
+	padding-bottom: 7px;
+}
+nav .sel {
+	background-color: #046;
+	border-bottom: solid 3px #5f5;
+	padding-bottom: 7px;
+}
+aside {
+	position: relative;
+	width: 280px;
+	padding: 10px;
+	margin-bottom: 0px;
+	float: right;
+	background-color: #ddd;/*
+	border-left: 1px dashed #00f;*/
+	z-index: 3;
+}
+footer {
+	clear: both;
+	width: 880px;
+	padding: 10px;
+	text-align: center;
+	bottom: 0px;
+	color: #fff;
+	background-color: #025;
+	z-index: 3;
+}
+.main {
+	background-color: #acf;
+	padding: 5px;
+	padding-top: 55px;
+	min-height: 560px;
+	width: 588px;
+	border-right: 1px dashed #00f;
+}
+.message {
+	position: relative;
+	background-color: #bdf;
+	margin: 5px;
+	padding: 5px;
+}
+.msgIcon {
+	position: absolute;
+	top: 5px;
+}
+.msgIcon img {
+	width: 48px;
+	border: 1px solid #fff;
+}
+.msgName {
+	margin-left: 55px;
+	font-size: 11pt;
+	font-weight: bold;
+	color: #225;
+	margin-bottom: 5px;
+}
+.msgText {
+	margin-left: 55px;
+	margin-bottom: 5px;
+}
+.msgInfo {
+	float: right;
+	font-size: 10pt;
+	padding: 3px;
+}
+.msgInfo img {
+	width: 20px;
+	float: right;
+	margin-top: -1px;
+	margin-left: 3px;
+	cursor: pointer;
+}
+.message.repl {
+	margin-left: 50px;
+}
+.message.repl .msgIcon img {
+	width: 32px;
+}
+.message.repl .msgText {
+	margin-left: 40px;
+}
+.message.repl .msgName {
+	margin-left: 40px;
+	margin-bottom: 0px;
+}
+.fade {
+	width: 100%;
+	height: 50px;
+	background: linear-gradient(to bottom, rgba(170,204,255,0), rgba(170,204,255,0.75), rgba(170,204,255,1));
+	margin-top: -50px;
+	position: relative;
+}
+.msgFormText {
+	width: 450px;
+	height: 46px;
+	overflow: hiden;
+	min-height: 46px;
+	font-family: 'Segoe UI Light';
+	font-size: 12pt;
+	margin-left: 55px;
+	margin-bottom: 0px;
+	border: 1px dashed #aae;
+	background-color: #bdf;
+	resize: vertical;
+}
+.msgFormSbm {
+	width: 48px;
+	position: absolute;
+	margin: 5px;
+	top: 0px;
+}
+.message.repl .msgFormText {
+	margin-left: 40px;
+	width: 420px;
+}
+.login {
+	width: 275px;
+	margin: auto;
+	margin-top: 50px;
+	padding: 20px;
+	background-color: #bdf;
+	border: 1px solid #9bf;
+}
+.login h1 {
+	text-align: center;
+	margin: 0px;
+	margin-bottom: 10px;
+}
+.login_input {
+	font-family: 'Segoe UI Light';
+	font-size: 16pt;
+	padding: 5px;
+	margin: 0px;
+	margin-bottom: 5px;
+	width: 260px;
+}
+.login_submit {
+	font-family: 'Segoe UI Light';
+	font-size: 16pt;
+	padding: 5px;
+	margin: 0px;
+	margin-top: 5px;
+	width: 275px;
+	background-color: #5bf;
+	border: 1px solid #77f;
+}
+.login_msg {
+	color: #c00;
+	margin-bottom: 5px;
+}
+.logout {
+	float: right;
+	height: 30px;
+	padding: 10px;
+	cursor: pointer;
+}
+.user_card {
+	position: relative;
+	background-color: #bdf;
+	margin: 5px;
+	padding: 5px;
+}
+.user_avatar {
+	position: absolute;
+	top: 5px;
+	bottom: 5px;
+}
+.user_avatar img {
+	width: 48px;
+	border: 1px solid #fff;
+}
+.user_info {
+	padding: 5px;
+	padding-bottom: 0px;
+	margin-left: 50px;
+}
+.user_name {
+	font-weight: bold;
+	margin-top: -5px;
+	margin-bottom: 5px;
+}
+.user_birthday {
+	float: right;
+	margin-top: -5px;
+	margin-bottom: 5px;
+	background-image: url('images/Happy Birthday icon.png');
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+	padding-left: 27px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.user_phone {
+	display: inline-block;
+	background-image: url('images/phone.png');
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+	padding-left: 15px;
+	width: 100px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.user_skype {
+	display: inline-block;
+	background-image: url('images/skype.png');
+	background-position-y: center;
+	background-repeat: no-repeat;
+	background-size: auto 90%;
+	padding-left: 22px;
+	width: 120px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.user_email {
+	display: inline-block;
+	background-image: url('images/email.png');
+	background-position-y: center;
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+	padding-left: 24px;
+	width: 215px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.edit_current_user {
+	display: inline-block;
+	background-image: url('images/users-edit.png');
+	background-position: 5px center;
+	background-repeat: no-repeat;
+	background-size: auto 75%;
+	margin-left: 40px;
+	padding: 10px;
+	padding-left: 40px;
+	background-color: #bdf;
+	cursor: pointer;
+}
+.edit_current_user:hover {
+	background-color: #8af;
+}
+.user_edit_form {
+	margin-left: 50px;
+	font-size: 14pt;
+}
+.user_edit_form label {
+	display: inline-block;
+	width: 150px;
+}
+.user_edit_form input {
+	width: 200px;
+	padding: 3px;
+	font-family: 'Segoe UI Light';
+	font-size: 14pt;
+	margin: 2px;
+}
+.pass_info {
+	float: right;
+	font-size: 11pt;
+	display: inline-block;
+	width: 140px;
+	margin-right: 25px;
+	margin-top: 5px;
+}
+.edit_user_submit {
+	width: 210px !important;
+	margin-left: 150px !important;
+	margin-top: 20px !important;
+}
+.edit_avatar {
+	border: 1px solid #00f;
+}
+.edit_avatar legend {
+	font-size: 11pt;
+}
+#avatar_file {
+	font-size: 10pt;
+	width: 210px;
+}
+.avatar_info {
+	float: right;
+	font-size: 11pt;
+	display: inline-block;
+	width: 115px;
+}
+#default_avatar {
+	width: 20px;
+	height: 20px;
+}
+.first_alert {
+	position: absolute;
+	text-align: center;
+	width: 400px;
+	left: 100px;
+	top: 100px;
+	font-size: 14pt;
+	padding: 10px;
+	border: 1px solid #090;
+	box-shadow: 5px 5px 10px #070;
+	z-index: 10;
+	background-color: #5fa;
+}
+.first_alert button {
+	padding: 5px;
+	margin: 5px;
+	margin-top: 10px;
+	font-size: 16pt;
+	font-family: 'Segoe UI Light';
+}
+.subj {
+	position: relative;
+	background-color: #bdf;
+	margin: 5px;
+	padding: 5px;
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+}
+.subj_num {
+	width: 22px;
+	height: 29px;
+	padding-left: 8px;
+	padding-top: 1px;
+	background-color: #009;
+	font-size: 14pt;
+	font-family: 'Arial Black';
+	color: #fff;
+	border: 3px solid #77f;
+	border-radius: 20px;
+	margin-top: -10px;
+	margin-left: -10px;
+	float: left;
+}
+.subj_title {
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 10px;
+	font-size: 14pt;
+	font-weight: bold;
+	padding: 5px;
+	color: #009;
+}
+.subj_title.not_active {
+	color: #999;
+}
+.subj_title.marg {
+	margin-left: 35px;
+}
+.subj_teachers {
+	display: inline-block;
+	vertical-align: middle;
+	padding: 5px;
+}
+.subj_teacher {
+	cursor: pointer;
+	font-style: italic;
+}
+.subj_aud {
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 13pt;
+	font-family: 'Tahoma';
+	border: 1px solid #00f;
+	padding: 5px;
+	border-radius: 20px;
+}
+.subj_aud.pr {
+	background: #bbf;
+}
+.subj_aud.lek {
+	background: #bfb;
+}
+.subj_time {
+	float: right;
+	color: #00f;
+}
+.subj hr {
+	border: none;
+	border-bottom: 1px solid #00f;
+	margin-left: 35px;
+}
+.tomorrow_schd {
+	margin-left: 20px;
+	font-size: 14pt;
+	margin-top: -10px;
+	margin-bottom: 10px;
+}
+.tomorrow_birthday {
+	background-image: url('images/Happy Birthday icon.png');
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+	padding-left: 30px;
+	font-size: 14pt;
+}
+.download_schd_pdf {
+	width: 72px;
+	background-image: url('images/pdf.png');
+	background-repeat: no-repeat;
+	background-size: 100%;
+	padding: 3px;
+	padding-top: 75px;
+	font-size: 10pt;
+	background-color: #79f;
+	float: right;
+	margin: 5px;
+	cursor: pointer;
+	text-align: center;
+}
+.download_schd_pdf:hover{
+	background-color: #57f;
+}
+.poll_card {
+	position: relative;
+	background-color: #bdf;
+	margin: 5px;
+	padding: 5px;
+	margin-bottom: 10px;
+}
+.poll_question {
+	font-size: 14pt;
+	background-image: url('images/question.png');
+	background-position-y: center;
+	background-repeat: no-repeat;
+	background-size: 25px 25px;
+	padding-left: 30px;
+}
+.poll_answer {
+	/*padding: 3px;*/
+	margin-left: 20px;
+}
+.answer_text {
+	display: inline-block;
+	width: 40%;
+	padding: 3px;
+	cursor: pointer;
+	vertical-align: middle;
+}
+.answered {
+	color: #00f;
+	font-weight: bold;
+}
+.answer_text:hover {
+	background-color: #7bf;
+}
+.poll_answered .answer_text:hover {
+	background-color: #bdf;
+	cursor: initial;
+}
+.answer_num {
+	display: inline-block;
+	width: 5%;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+}
+.answer_diagram {
+	display: inline-block;
+	width: 50%;
+	vertical-align: middle;
+}
+.diagram_line {
+	background-color: #aaf;
+	text-align: center;
+	color: #777;
+	overflow: hidden;
+}
+.create_poll_title {
+	font-size: 16pt;
+	font-family: 'Segoe UI Light';
+	padding: 3px;
+	width: 550px;
+	margin: 5px;
+}
+.poll_ID {
+	float: right;
+	display: none;
+}
+.poll_card:hover .poll_ID {
+	display: block;
+}
+.create_poll_ans {
+	display: block;
+	font-size: 14pt;
+	font-family: 'Segoe UI Light';
+	padding: 3px;
+	width: 400px;
+	margin: 3px;
+	margin-left: 50px;
+}
+.create_poll_add {
+	display: inline-block;
+	font-size: 18pt;
+	font-family: 'Arial Black';
+	padding: 5px;
+	padding-left: 15px;
+	padding-right: 15px;
+	background-color: #7fa;
+	cursor: pointer;
+	margin-left: 55px;
+	border: 1px solid #0f0;
+	color: #00f;
+}
+.create_poll_add:hover {
+	background-color: #5f7;
+}
+.create_poll_sbm {
+	font-size: 16pt;
+	padding: 5px;
+}
+.poll_newID {
+	margin: 5px;
+	margin-left: 50px;
+	font-size: 18pt;
+	color: #00f;
+}
+.new_poll_btn {
+	display: inline-block;
+	margin-left: 50px;
+	padding: 5px;
+	font-size: 16pt;
+	color: #00b;
+	background-color: #79f;
+	cursor: pointer;
+}
+.new_poll_btn:hover {
+	background-color: #57f;
+}
+.album_cover {
+	position: relative;
+	background-color: #75f;
+	width: 180px;
+	padding: 5px;
+	padding-bottom: 2px;
+	text-align: center;
+	color: #fff;
+	display: inline-block;
+	vertical-align: middle;
+	margin: 3px;
+	margin-bottom: 5px;
+	cursor: pointer;
+}
+.album_cover:hover {
+	background-color: #55d;
+}
+.album_cover:before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    border-top: 20px solid #acf;
+    border-left: 20px solid #44f;
+    width: 0;
+}
+.album_cover img {
+	width: 100%;
+}
+.new_album {
+	display: inline-block;
+	padding: 5px;
+	font-size: 16pt;
+	color: #00b;
+	background-color: #79f;
+	cursor: pointer;
+	margin: 5px;
+}
+.new_album:hover {
+	background-color: #57f;
+}
+.attach_btn {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	background-image: url('images/attach.png');
+	background-size: 100%;
+	right: 65px;
+	top: 8px;
+	cursor: pointer;
+}
+#attach_panel {/*
+	position: absolute;
+	top: 0px;
+	right: -150px;
+	width: 140px;
+	height: 75px;
+	padding: 5px;
+	background-color: #79f;
+	border: 1px dashed #00f;
+	z-index: 7;
+	*/
+	display: none;
+	margin-left: 55px;
+}
+.pollAttached {
+	width: 500px;
+	margin-left: 55px;
+	margin-bottom: 5px !important;
+	border-left: 1px dashed #00f;
+}
+.included_photo {
+	display: inline-block;
+	width: 183px;
+	margin: 3px;
+	vertical-align: middle;
+	overflow: hidden;
+	max-height: 137px;
+}
+.included_photo img {
+	width: 100%;
+}
+.file_card {
+	position: relative;
+	background-color: #bdf;
+	margin: 5px;
+	padding: 5px;
+	margin-bottom: 10px;
+	min-height: 48px;
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+	cursor: pointer;
+}
+.file_card:hover {
+	background-color: #9bf;
+}
+.file_icon {
+	width: 48px;
+	position: absolute;
+}
+.file_name {
+	font-size: 14pt;
+	margin-left: 55px;
+	font-weight: bold;
+	color: #005;
+}
+.file_atr {
+	font-size: 12pt;
+	margin-left: 55px;
+}
+.file_ID {
+	float: right;
+	display: block;
+}
+.fileAttached {
+	width: 500px;
+	margin-left: 55px;
+	margin-bottom: 5px !important;
+	border-left: 1px dashed #00f;
+}
+/* PAGE STYLES */
+	.page_container {margin-left: 50px; margin-top: 10px;}
+	.page_link {text-decoration: none;}
+	.page_arrow {display:inline-block; padding: 5px; margin: 3px; background: #0ad; width: 20px; height: 20px; text-align: center;}
+	.page_arrow:hover {background: #0bd;}
+	.page_num {display:inline-block; padding: 5px; margin: 3px; background: #5cf; width: 20px; height: 20px; text-align: center;}
+	.page_num:hover {background: #5df;}
+	.page_curr {display:inline-block; padding: 5px; margin: 3px; background: #7f7; width: 20px; height: 20px; text-align: center;}
