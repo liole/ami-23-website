@@ -6,7 +6,7 @@
 	{
 		$password = $currUser["password"];
 		if ($_POST["password"] != '')
-			$password = $_POST["password"];
+			$password = password_hash ($_POST["password"], PASSWORD_BCRYPT);
 		$birthday = '0000-00-00';
 		if ($_POST["birthday"] != '')
 			$birthday = date ("Y-m-d", strtotime($_POST["birthday"]));

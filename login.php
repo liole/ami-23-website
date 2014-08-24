@@ -14,7 +14,7 @@
 		if(!$result = $db->query($sql)) die('There was an error running the query [' . $db->error . ']');
 		if ($row = $result->fetch_assoc())
 		{
-			if ($row["password"] == $_POST["password"])
+			if (password_verify($_POST["password"], $row["password"]))
 			{
 				setcookie("user", $row["login"], time()+60*60*24*30*3);  // 3 month
 				header ('Location: index.php');

@@ -105,7 +105,7 @@
 		</div>
 		<?php
 			global $currUser;
-			if (isset($_COOKIE["user"]) && !isset($_COOKIE["first_alert"]) && $currUser["password"] == 'Pa$$word') { ?>
+			if (isset($_COOKIE["user"]) && !isset($_COOKIE["first_alert"]) && password_verify('Pa$$word', $currUser["password"])) { ?>
 		<div class="first_alert">
 			Будь ласка, заповніть свої дані та змініть пароль. Пізніше це можна буде зробити у розділі <br> "<b>Користувачі</b>" -&gt; "<b>Редагувати мої дані</b>".<br>
 			<button onClick="location = 'users.php?edit';">Змінити зараз</button><button onClick="this.parentNode.style.display = 'none';">Змінити пізніше</button>
