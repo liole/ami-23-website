@@ -34,7 +34,7 @@ nav .menu:hover {
 }
 nav .sel {
 	background-color: #046;
-	border-bottom: solid 3px #5f5;
+	border-bottom: solid 3px #ff0;
 	padding-bottom: 7px;
 }
 aside {
@@ -683,4 +683,4 @@ footer {
 	.page_arrow:hover {background: #0bd;}
 	.page_num {display:inline-block; padding: 5px; margin: 3px; background: #5cf; width: 20px; height: 20px; text-align: center;}
 	.page_num:hover {background: #5df;}
-	.page_curr {display:inline-block; padding: 5px; margin: 3px; background: #7f7; width: 20px; height: 20px; text-align: center;}
+	.page_curr {display:inline-block; padding: 5px; margin: 3px; background: #ff7; width: 20px; height: 20px; text-align: center;}
