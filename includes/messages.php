@@ -1,6 +1,6 @@
 <?php
 	include_once 'template.php';
-	include 'attaches.php';
+	include 'includes/attaches.php';
 	include_once 'userNames.php';
 		
 	function replace_links ($source)

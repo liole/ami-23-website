@@ -72,14 +72,18 @@
 		$leaved_images = $count-$max_first_line;
 		if ($leaved_images < $max_first_line+1) $leaved_images = $max_first_line+1;
 		$width = floor (568.0/($leaved_images)-6);
+		$firstLineWidth = floor (568.0/($first_line)-6);
 		$maxHeight = floor($width*3/4);
+		$firstLineMaxHeight = floor($firstLineWidth*3/4);
 		$sql = "SELECT * FROM photos WHERE album = $id ORDER BY id DESC";
 		if(!$result = $db->query($sql)) die('There was an error running the query [' . $db->error . ']');
+		$firstPrefix = 'thumb/';
+		if ($first_line == 1) $firstPrefix = '';
 		$output .= '<div style="text-align: right;">';
 		for ($i = 0; $i < $first_line; ++$i)
 		{
 			$row = $result->fetch_assoc();
-			$output .= '<div class="included_photo"><a title="'.$row["title"].'" class="fancybox" href="photos/'.$row["file_id"].'.jpg" rel="album'.$row["album"].'"><img src="photos/thumb/'.$row["file_id"].'.jpg"></a></div>';
+			$output .= '<div class="included_photo" style="width: '.$firstLineWidth.'px; max-height: '.$firstLineMaxHeight.'px"><a title="'.$row["title"].'" class="fancybox" href="photos/'.$row["file_id"].'.jpg" rel="album'.$row["album"].'"><img src="photos/'.$firstPrefix.$row["file_id"].'.jpg"></a></div>';
 		}
 		while ($row = $result->fetch_assoc())
 		{
@@ -100,14 +104,18 @@
 		$leaved_images = $count-$max_first_line;
 		if ($leaved_images < $max_first_line+1) $leaved_images = $max_first_line+1;
 		$width = floor (568.0/($leaved_images)-6);
+		$firstLineWidth = floor (568.0/($first_line)-6);
 		$maxHeight = floor($width*3/4);
+		$firstLineMaxHeight = floor($firstLineWidth*3/4);
+		$firstPrefix = 'thumb/';
+		if ($first_line == 1) $firstPrefix = '';
 		$output .= '<div style="text-align: right;">';
 		for ($i = 0; $i < $first_line; ++$i)
 		{
 			$sql = "SELECT * FROM photos WHERE id = ".$arrIDs[$i];
 			if(!$result = $db->query($sql)) die('There was an error running the query [' . $db->error . ']');
 			$row = $result->fetch_assoc();
-			$output .= '<div class="included_photo"><a title="'.$row["title"].'" class="fancybox" href="photos/'.$row["file_id"].'.jpg" rel="album'.$row["album"].'"><img src="photos/thumb/'.$row["file_id"].'.jpg"></a></div>';
+			$output .= '<div class="included_photo" style="width: '.$firstLineWidth.'px; max-height: '.$firstLineMaxHeight.'px"><a title="'.$row["title"].'" class="fancybox" href="photos/'.$row["file_id"].'.jpg" rel="album'.$row["album"].'"><img src="photos/'.$firstPrefix.$row["file_id"].'.jpg"></a></div>';
 		}
 		for ($i = $first_line; $i < $count; ++$i)
 		{
