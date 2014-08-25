@@ -12,7 +12,7 @@
 	
 	function printMessage($row)
 	{
-		global $users_data, $db;
+		global $users_data, $currUser, $db;
 		$avatar = $row["user"].'.jpg';
 		if (!file_exists('images/avatars/'.$avatar)) $avatar = 'noAv.png';
 		$sql_discCount = "SELECT count(*) as discCount  FROM discuss WHERE msg_id = '".$row["id"]."'";
@@ -25,7 +25,7 @@
 			<div class="msgInfo">
 				'.date("d.m.Y H:i",strtotime($row["date"])).' | '.$discCount.'<img src="images/discuss.png" alt="discuss" onClick="location = \'?discuss='.$row["id"].'\';"/>
 			</div>
-			<div class="msgName">'.$users_data[$row["user"]].'</div>
+			<div class="msgName">'.$users_data[$row["user"]].(($currUser["login"] == $row["user"] || $currUser["type"] == 'admin')?'<img src="images/delete.png" class="panelBtn" title="Видалити" onClick="if (confirm(\'Ви дійсно хочете видалити цей елемент та всі дописи до нього?\')) location = \'?delete=messages&id='.$row["id"].'\';"><img src="images/edit.png" class="panelBtn" title="Редагувати" onClick="location = \'?edit=messages&id='.$row["id"].'\';">':'').'</div>
 			<div class="msgText">'.nl2br(replace_links($row["text"])).'</div>';
 			if ($row["attach"] == 'poll')
 				echo attachPoll($row["attach_id"]);
@@ -40,7 +40,7 @@
 	}
 	function printDiscussMesage ($row_discuss)
 	{
-		global $users_data;
+		global $users_data, $currUser;
 		$avatar = $row_discuss["user"].'.jpg';
 		if (!file_exists('images/avatars/'.$avatar)) $avatar = 'noAv.png';
 		echo '
@@ -49,7 +49,7 @@
 		<div class="msgInfo">
 			'.date("d.m.Y H:i",strtotime($row_discuss["date"])).'
 		</div>
-		<div class="msgName">'.$users_data[$row_discuss["user"]].'</div>
+		<div class="msgName">'.$users_data[$row_discuss["user"]].(($currUser["login"] == $row_discuss["user"] || $currUser["type"] == 'admin')?'<img src="images/delete.png" class="panelBtn" title="Видалити" onClick="if (confirm(\'Ви дійсно хочете видалити цей елемент?\')) location = \'?delete=discuss&id='.$row_discuss["id"].'\';"><img src="images/edit.png" class="panelBtn" title="Редагувати" onClick="location = \'?edit=discuss&id='.$row_discuss["id"].'\';">':'').'</div>
 		<div class="msgText">'.nl2br(replace_links($row_discuss["text"])).'</div>
 	</div>';
 	}

@@ -81,7 +81,7 @@ function openUploader (name)
 	name = typeof a !== 'undefined' ? name : '';
 	var uploader = window.open ('uploader.php', name, 'width=325, height=225, top=100, left=100, location=no');
 }
-function showAppachPanel()
+function showAttachPanel()
 {
 	document.getElementById ('attach_panel').style.display = 'block';
 }

@@ -684,3 +684,10 @@ footer {
 	.page_num {display:inline-block; padding: 5px; margin: 3px; background: #5cf; width: 20px; height: 20px; text-align: center;}
 	.page_num:hover {background: #5df;}
 	.page_curr {display:inline-block; padding: 5px; margin: 3px; background: #ff7; width: 20px; height: 20px; text-align: center;}
+	
+.panelBtn {
+	float: right;
+	height: 16px;
+	margin-top: 4px;
+	cursor: pointer;
+}
