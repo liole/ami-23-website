@@ -94,7 +94,7 @@ function changeAttach (sel)
 	} else 
 		document.getElementById ('attach_ID').readOnly = false;
 	if (sel.value == 'file')
-		document.getElementById ('attach_comment').innerHTML = ' <a href="javascript: openFileUploader();">завантажити</a>';
+		document.getElementById ('attach_comment').innerHTML = ' <a href="javascript: openFileUploader(\'embed_upload\');">завантажити</a>';
 	else if (sel.value == 'photo')
 		document.getElementById ('attach_comment').innerHTML = ' <a href="javascript: openUploader(\'embed_upload\');">завантажити</a>';
 	else document.getElementById ('attach_comment').innerHTML = '';

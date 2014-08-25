@@ -25,6 +25,30 @@
 		<script type="text/javascript" src="script.js"></script>
 	</head>
 	<body style="background-color: #9f9">
+	<?php if ($newID != 0) { ?>
+	<script type="text/javascript">
+		function isNumber(n) {
+			return !isNaN(parseFloat(n)) && isFinite(n);
+		}
+		if (window.name = 'embed_upload')
+		{
+			var currValue = opener.document.getElementById ('attach_ID').value;
+			var result = '';
+			if (currValue == '') 
+				result = <?php echo $newID; ?>;
+			else {
+				var arr = [];
+				if (isNumber(currValue))
+					arr = [parseInt(currValue)];
+				else try { arr = JSON.parse(currValue); }
+					catch(e) { arr = []; }
+				var newArr = arr.concat([<?php echo $newID; ?>]);
+				result = JSON.stringify (newArr);
+			}
+			opener.document.getElementById ('attach_ID').value = result;
+		}
+	</script>
+	<?php } ?>
 	<h3 style="text-align: center;"><?php echo ($newID == 0)?'Завантажити файл':'Файл успішно завантажено ID '.$newID;?></h3>
 	<form action="fileUploader.php" method="post" enctype="multipart/form-data">
 	до 8 Мб, назва файлу лише латиницею<br>

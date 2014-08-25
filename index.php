@@ -6,9 +6,16 @@
 		$sql = '';
 		if ($_GET["new"] == "message")
 		{
-			if ($_POST["attach_ID"] == '' || 
-			($_POST["attach_type"] != 'photos' && !is_numeric($_POST["attach_ID"])) ||
-			($_POST["attach_type"] == 'photos' && json_decode($_POST["attach_ID"]) == null)) 
+			/*
+				file -> json | number
+				photos -> json
+				poll, album -> number
+			*/
+			if ($_POST["attach_ID"] == '' ||
+				($_POST["attach_type"] == 'file' && (!is_numeric($_POST["attach_ID"]) && json_decode($_POST["attach_ID"]) == null)) ||
+				($_POST["attach_type"] == 'photos' && json_decode($_POST["attach_ID"]) == null) ||
+				(($_POST["attach_type"] == 'poll' || $_POST["attach_type"] == 'album') && !is_numeric($_POST["attach_ID"]))
+				)
 				$_POST["attach_type"] = 'none';
 			//TODO: check if object exists.
 			//NOW: same visual resul, but not-valid data stored in db
