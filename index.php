@@ -6,6 +6,12 @@
 		$sql = '';
 		if ($_GET["new"] == "message")
 		{
+			if ($_POST["attach_ID"] == '' || 
+			($_POST["attach_type"] != 'photos' && !is_numeric($_POST["attach_ID"])) ||
+			($_POST["attach_type"] == 'photos' && json_decode($_POST["attach_ID"]) == null)) 
+				$_POST["attach_type"] = 'none';
+			//TODO: check if object exists.
+			//NOW: same visual resul, but not-valid data stored in db
 			$sql = "INSERT INTO messages (user,text,date,attach,attach_id) VALUES (
 				'".$_COOKIE["user"]."', 
 				'".str_replace("'", "''", $_POST["text"])."', 
