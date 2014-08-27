@@ -85,12 +85,13 @@ function showAttachPanel()
 {
 	document.getElementById ('attach_panel').style.display = 'block';
 }
-function changeAttach (sel)
+function changeAttach (sel, edit)
 {
 	if (sel.value =='photo') {
-		document.getElementById ('attach_ID').readOnly = true;
-		document.getElementById ('attach_ID').value = '[]';
-		openUploader ('embed_upload');
+		if (!edit) {
+			document.getElementById ('attach_ID').value = '[]';
+			openUploader ('embed_upload');
+		}
 	} else 
 		document.getElementById ('attach_ID').readOnly = false;
 	if (sel.value == 'file')
