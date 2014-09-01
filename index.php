@@ -188,7 +188,7 @@
 						<option value="album" <?php echo ($row["attach"]=='album')?'selected':''; ?>>Фотоальбом</option>
 						<option value="file" <?php echo ($row["attach"]=='poll')?'selected':''; ?>>Файл</option>
 					</select>
-					ID: <input type="text" name="attach_ID" id="attach_ID" style="width: 100px;" value="<?php echo $row["attach_id"]; ?>"><span id="attach_comment"></span><script type="text/javascript">changeAttach(document.getElementById('attach_type'));</script>
+					ID: <input type="text" name="attach_ID" id="attach_ID" style="width: 100px;" value="<?php echo $row["attach_id"]; ?>"><span id="attach_comment"></span><script type="text/javascript">changeAttach(document.getElementById('attach_type'),true);</script>
 				</div>
 				<?php } ?>
 			</form>
