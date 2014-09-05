@@ -7,6 +7,7 @@
 		"Опитування" => "polls.php",
 		">" => "#' onClick='return moreMenu(this);",
 		"Користувачі" => "users.php",
+		"Календар" => "calendar.php",
 		"..." => "..."
 	);
 

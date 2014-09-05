@@ -6,9 +6,10 @@
 		header ('Location: login.php');
 	include 'data.php';
 	
-	$db = new mysqli('localhost', 'ami_user', 'Pa$$word', 'ami'); 
+	$db = new mysqli('localhost', 'root', '', 'ami'); 
 	if($db->connect_errno > 0)
 		die('Unable to connect to database [' . $db->connect_error . ']');
+	$db->set_charset('UTF8');
 	
 	/*** CURRENT USER INFO ***/
 	if (isset($_COOKIE["user"]))
@@ -22,7 +23,7 @@
 		else $currBirthday = date("d.m.Y",strtotime($currUser["birthday"]));
 	}
 	
-	function printTop ($title)
+	function printTop ($title, $style = 0)
 	{
 ?>
 <!DOCTYPE HTML>
@@ -32,7 +33,11 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link href="fonts.css" rel="stylesheet" type="text/css">
 		<link href="style.css" rel="stylesheet" type="text/css" />
+		<?php if ($style) {
+			echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"$style\">\n";
+		} ?>
 		<script type="text/javascript" src="script.js"></script>
+		<script src="jquery.js"></script>
 		<?php if ($title == 'Фотогалерея' || $title == 'Головна') { ?>
 		<!-- FANCYBOX -->
 		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>

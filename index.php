@@ -1,6 +1,9 @@
 <?php
 	include 'template.php';
 
+// 		$sql = file_get_contents('Dump20140825.sql');
+ //  	if(!$result = $db->query($sql)) die('There was an error running the query [' . $db->error . ']');
+
 	if (isset($_GET["new"]))
 	{
 		$sql = '';
