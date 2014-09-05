@@ -38,6 +38,24 @@ nav .sel {
 	border-bottom: solid 3px #ff0;
 	padding-bottom: 7px;
 }
+nav #more_menu2 {
+	display: none;
+	position: absolute;
+	top: 5px;
+	left: 2px;
+	color: #fff;
+	font-size: 20pt;
+	border: 2px solid #ff0;
+	border-radius: 40px;
+	padding-left: 8px;
+	padding-right: 8px;
+	background-color: rgba(255,255,0,0.25);
+	cursor: pointer;
+}
+nav #more_menu2:hover {
+	background-color: rgba(255,255,0,0.75);
+	color: #00f;
+}
 aside {
 	position: relative;
 	width: 280px;
@@ -50,7 +68,7 @@ aside {
 }
 footer {
 	clear: both;
-	width: 880px;
+	/*width: 880px;*/
 	padding: 10px;
 	text-align: center;
 	bottom: 0px;
@@ -125,6 +143,7 @@ footer {
 }
 .msgFormText {
 	width: 450px;
+	width: calc(100% - 119px);
 	height: 46px;
 	overflow: hiden;
 	min-height: 46px;
@@ -343,7 +362,8 @@ footer {
 	background-color: $mainElementColor;
 	margin: 5px;
 	padding: 5px;
-	width: 500px;
+	max-width: 500px;
+	width: 90%;
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 10px;
@@ -645,7 +665,8 @@ footer {
 	padding: 5px;
 	margin-bottom: 10px;
 	min-height: 48px;
-	width: 500px;
+	max-width: 500px;
+	width: 95%;
 	margin-left: auto;
 	margin-right: auto;
 	cursor: pointer;

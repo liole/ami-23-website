@@ -20,6 +20,7 @@
 	$db = new mysqli('localhost', 'ami_user', 'Pa$$word', 'ami'); 
 	if($db->connect_errno > 0)
 		die('Unable to connect to database [' . $db->connect_error . ']');
+	$db->set_charset('UTF8');
 	
 	/*** CURRENT USER INFO ***/
 	if (isset($_COOKIE["user"]))
@@ -44,6 +45,8 @@
 		<link href="styles/fonts.css" rel="stylesheet" type="text/css">
 		<link href="process_css.php?file=style.css&theme=<?php echo $_COOKIE["theme"]; ?>" rel="stylesheet" type="text/css" />
 		<?php if ($style) echo '<link href="process_css.php?file='.$style.'&theme='.$_COOKIE["theme"].'" rel="stylesheet" type="text/css" />'; ?>
+		<meta name="viewport" content="width=device-width" />
+		<link href="styles/media-style.css" rel="stylesheet" type="text/css">
 		<script type="text/javascript" src="script.js"></script>
 		<?php if ($title == 'Фотогалерея' || $title == 'Головна') { ?>
 		<!-- FANCYBOX -->
@@ -72,6 +75,7 @@
 					echo '<img src="images/lock.png" class="logout" onClick="location = \'login.php?logout\'">';
 				}
 			?>
+			<div id="more_menu2" onClick='moreMenu2(this);'>&#x25BC;</div>
 		</nav>
 		<aside>
 			<img src="images/ami23.png" style="width: 100%">

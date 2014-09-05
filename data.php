@@ -5,7 +5,7 @@
 		"Фотогалерея" => "photos.php",
 		"Розклад" => "schedule.php",
 		"Опитування" => "polls.php",
-		">" => "#' onClick='return moreMenu(this);",
+		">" => "#' onClick='return moreMenu(this);' id='more_menu1",
 		"Користувачі" => "users.php",
 		"..." => "..."
 	);
