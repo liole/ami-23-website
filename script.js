@@ -56,6 +56,11 @@ window.textareaActive = false;
 window.onfocus = function () { 
   window.isActive = true; 
   changeIcon ('favicon.ico');
+  if (window.ChatNewNum > 0)
+  {
+	window.ChatNewNum = 0;
+	document.title = 'Чат - ПМІ-23';;
+  }
 }; 
 window.onblur = function () { 
   window.isActive = false; 

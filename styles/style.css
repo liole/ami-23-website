@@ -713,3 +713,14 @@ footer {
 	margin-top: 4px;
 	cursor: pointer;
 }
+.message.chat .msgIcon img {
+	width: 32px;
+}
+.message.chat .msgText {
+	margin-left: 40px;
+}
+.message.chat .msgName {
+	margin-left: 40px;
+	margin-bottom: 0px;
+	font-size: 10pt;
+}

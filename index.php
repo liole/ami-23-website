@@ -80,7 +80,7 @@
 		exit;
 	}
 	
-	printTop("Головна");
+	printTop("Новини");
 ?>
 	<?php
 		include 'includes/messages.php';
@@ -199,7 +199,7 @@
 <script type="text/javascript">
 	window.lastMsgTime = <?php include 'lastMsgTime.php'; ?>; 
 	window.isActive = <?php echo ((isset($_GET["wasActive"]))?$_GET["wasActive"]:'true'); ?>;
-	<?php if (!isset($_GET["discuss"])) echo "setInterval(function(){checkNewMsg()}, 10000);"; ?>
+	<?php if (!isset($_GET["discuss"])) echo "setInterval(function(){checkNewMsg()}, 30000);"; ?>
 	<?php if (isset($_GET["newMsg"])) {
 		echo "var notify = new Audio('images/notify.wav'); notify.play();\n";
 		echo "window.history.pushState('', 'New message', '/');";
