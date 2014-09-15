@@ -47,15 +47,15 @@
 		<?php if ($style) echo '<link href="process_css.php?file='.$style.'&theme='.$_COOKIE["theme"].'" rel="stylesheet" type="text/css" />'; ?>
 		<meta name="viewport" content="width=device-width" />
 		<link href="styles/media-style.css" rel="stylesheet" type="text/css">
-		<script type="text/javascript" src="script.js"></script>
-		<?php if ($title == 'Фотогалерея' || $title == 'Головна') { ?>
-		<!-- FANCYBOX -->
 		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script type="text/javascript" src="script.js"></script>
+		<?php if ($title == 'Фотогалерея' || $title == 'Новини') { ?>
+		<!-- FANCYBOX -->
 		<link rel="stylesheet" href="fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
 		<script type="text/javascript" src="fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 		<script type="text/javascript">
 			$(document).ready(function() {
-				$(".fancybox").fancybox({padding:5,openEffect:'elastic',closeEffect:'elastic'});
+				$(".fancybox").fancybox({padding:5,openEffect:'elastic',closeEffect:'elastic',afterLoad: function() {this.inner.append("<a href='"+this.href+"' class=\"image_download\" download></a>");}});
 			});
 		</script>
 
@@ -134,6 +134,23 @@
 				setcookie("first_alert", 'true', time()+60*60*24*30*3);
 			}
 		?>
+		<a href="#" class="scrollToTop"></a>
+		<script type="text/javascript">
+			//Check to see if the window is top if not then display button
+			$(window).scroll(function(){
+				if ($(this).scrollTop() > 100) {
+					$('.scrollToTop').fadeIn();
+				} else {
+					$('.scrollToTop').fadeOut();
+				}
+			});
+			
+			//Click event to scroll to top
+			$('.scrollToTop').click(function(){
+				$('html, body').animate({scrollTop : 0},800);
+				return false;
+			});
+		</script>
 		<footer>
 			Copyright &copy; 2014
 		</footer>

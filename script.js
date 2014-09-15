@@ -81,7 +81,7 @@ function checkNewMsg()
 		if (lastMsgTimeNow != window.lastMsgTime && !window.textareaActive)
 			location = '?wasActive='+window.isActive+'&newMsg';
     }}
-	xmlhttp.open("GET","lastMsgTime.php",true);
+	xmlhttp.open("GET","lastMsgTime",true);
 	xmlhttp.send();
 	
 }

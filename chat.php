@@ -10,7 +10,7 @@
 	<form action="?new=message" method="post" class="message" onSubmit="return msgPush();">	
 		<div class="msgIcon"><img src="images/avatars/<?php echo $currUser["avatar"]; ?>" alt="Я" /></div>
 		<textarea name="text" id='messageInput' onKeyUp="textAreaAdjust(this)" onFocus="window.textareaActive = true;" onBlur="window.textareaActive = false;" placeholder="Текст повідомлення...
-Для надсилання натисніть Ctrl+Enter" class="msgFormText"></textarea>
+Для надсилання натисніть Enter, Shift+Enter для нового рядка." class="msgFormText"></textarea>
 		<input type="image" src="images/mail.png" class="msgFormSbm" id="submit">
 		<input type='hidden' id='nameInput' value="<?php echo $currUser["login"];?>">
 	</form>
@@ -22,6 +22,7 @@
       function msgPush() {
           var name = $('#nameInput').val();
           var text = $('#messageInput').val();
+		  if (text.length() == 0) return false;
           myDataRef.push({name: name, text: text, date: Firebase.ServerValue.TIMESTAMP});
           $('#messageInput').val('');
 		  return false;
@@ -68,7 +69,7 @@
 			fn.call(thiz, e);
 		}
 		thiz.bind("keydown", function (e) {
-			if (e.keyCode === 13 && e.ctrlKey) {
+			if (e.keyCode === 13 && !e.shiftKey) {
 				performAction(e);
 				e.preventDefault();
 			}
