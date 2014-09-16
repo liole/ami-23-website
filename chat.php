@@ -22,7 +22,7 @@
       function msgPush() {
           var name = $('#nameInput').val();
           var text = $('#messageInput').val();
-		  if (text.length() == 0) return false;
+		  if (text.length == 0) return false;
           myDataRef.push({name: name, text: text, date: Firebase.ServerValue.TIMESTAMP});
           $('#messageInput').val('');
 		  return false;
