@@ -1,11 +1,12 @@
 <?php
 	$menu = array (
-		"Головна" => "index.php",
+		"Новини" => "index.php",
 		"Файли" => "files.php",
 		"Фотогалерея" => "photos.php",
 		"Розклад" => "schedule.php",
 		"Опитування" => "polls.php",
-		">" => "#' onClick='return moreMenu(this);",
+		">" => "#' onClick='return moreMenu(this);' id='more_menu1",
+		"Чат" => "chat.php",
 		"Користувачі" => "users.php",
 		"Календар" => "calendar.php",
 		"..." => "..."
