@@ -5,6 +5,17 @@
 	if (!isset($_COOKIE["user"]) && stripos($_SERVER['PHP_SELF'], 'login.php') === false)
 		header ('Location: login.php');
 	include 'data.php';
+	if(!isset($_COOKIE["theme"]))
+	{
+		setcookie("theme", "light", time()+60*60*24*30*3);  // 3 month
+		$_COOKIE["theme"] = "light";
+	}
+	if (isset($_GET["theme"]))
+	{
+		setcookie("theme", $_GET["theme"], time()+60*60*24*30*3);  // 3 month
+		$_COOKIE["theme"] = $_GET["theme"];
+	}
+	
 	
 	$db = new mysqli('localhost', 'root', '', 'ami'); 
 	if($db->connect_errno > 0)
@@ -23,7 +34,7 @@
 		else $currBirthday = date("d.m.Y",strtotime($currUser["birthday"]));
 	}
 	
-	function printTop ($title, $style = 0)
+	function printTop ($title, $style = null)
 	{
 ?>
 <!DOCTYPE HTML>
@@ -31,11 +42,9 @@
 	<head>
 		<title><?php echo $title; ?> - ПМІ-23</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<link href="fonts.css" rel="stylesheet" type="text/css">
-		<link href="style.css" rel="stylesheet" type="text/css" />
-		<?php if ($style) {
-			echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"$style\">\n";
-		} ?>
+		<link href="styles/fonts.css" rel="stylesheet" type="text/css">
+		<link href="process_css.php?file=style.css&theme=<?php echo $_COOKIE["theme"]; ?>" rel="stylesheet" type="text/css" />
+		<?php if ($style) echo '<link href="process_css.php?file='.$style.'&theme='.$_COOKIE["theme"].'" rel="stylesheet" type="text/css" />'; ?>
 		<script type="text/javascript" src="script.js"></script>
 		<script src="jquery.js"></script>
 		<?php if ($title == 'Фотогалерея' || $title == 'Головна') { ?>

@@ -1,0 +1,16 @@
+{
+	"light" : {
+		"backgroundColor" : "#ddd",
+		"mainColor": "#acf",
+		"mainElementColor" : "#bdf",
+		"mainTextColor": "#000",
+		"msgTextColor" : "#225"
+	},
+	"dark" : {
+		"backgroundColor" : "#222",
+		"mainColor": "#025",
+		"mainElementColor" : "#236",
+		"mainTextColor": "#fff",
+		"msgTextColor" : "#bbf"
+	}
+}

@@ -1,12 +1,13 @@
 body {
 	position: relative;
-	background-color: #ddd;
+	background-color: $backgroundColor;
 	font-family: 'Segoe UI Light';
 	width: 900px;
 	margin: auto;
 	margin-bottom: 5px;
 	border-right: 1px solid #aaa;
 	border-left: 1px solid #00f;
+	color: $mainTextColor;
 }
 nav {
 	position: fixed;
@@ -43,7 +44,7 @@ aside {
 	padding: 10px;
 	margin-bottom: 0px;
 	float: right;
-	background-color: #ddd;/*
+	background-color: $backgroundColor;/*
 	border-left: 1px dashed #00f;*/
 	z-index: 3;
 }
@@ -58,7 +59,7 @@ footer {
 	z-index: 3;
 }
 .main {
-	background-color: #acf;
+	background-color: $mainColor;
 	padding: 5px;
 	padding-top: 55px;
 	min-height: 560px;
@@ -67,7 +68,7 @@ footer {
 }
 .message {
 	position: relative;
-	background-color: #bdf;
+	background-color: $mainElementColor;
 	margin: 5px;
 	padding: 5px;
 }
@@ -83,7 +84,7 @@ footer {
 	margin-left: 55px;
 	font-size: 11pt;
 	font-weight: bold;
-	color: #225;
+	color: $msgTextColor;
 	margin-bottom: 5px;
 }
 .msgText {
@@ -118,7 +119,7 @@ footer {
 .fade {
 	width: 100%;
 	height: 50px;
-	background: linear-gradient(to bottom, rgba(170,204,255,0), rgba(170,204,255,0.75), rgba(170,204,255,1));
+	background: linear-gradient(to bottom, rgba(%rgb$mainColor,0), rgba(%rgb$mainColor,0.75), rgba(%rgb$mainColor,1));
 	margin-top: -50px;
 	position: relative;
 }
@@ -132,7 +133,7 @@ footer {
 	margin-left: 55px;
 	margin-bottom: 0px;
 	border: 1px dashed #aae;
-	background-color: #bdf;
+	background-color: $mainElementColor;
 	resize: vertical;
 }
 .msgFormSbm {
@@ -150,7 +151,7 @@ footer {
 	margin: auto;
 	margin-top: 50px;
 	padding: 20px;
-	background-color: #bdf;
+	background-color: $mainElementColor;
 	border: 1px solid #9bf;
 }
 .login h1 {
@@ -188,7 +189,7 @@ footer {
 }
 .user_card {
 	position: relative;
-	background-color: #bdf;
+	background-color: $mainElementColor;
 	margin: 5px;
 	padding: 5px;
 }
@@ -263,7 +264,7 @@ footer {
 	margin-left: 40px;
 	padding: 10px;
 	padding-left: 40px;
-	background-color: #bdf;
+	background-color: $mainElementColor;
 	cursor: pointer;
 }
 .edit_current_user:hover {
@@ -339,7 +340,7 @@ footer {
 }
 .subj {
 	position: relative;
-	background-color: #bdf;
+	background-color: $mainElementColor;
 	margin: 5px;
 	padding: 5px;
 	width: 500px;
@@ -442,7 +443,7 @@ footer {
 }
 .poll_card {
 	position: relative;
-	background-color: #bdf;
+	background-color: $mainElementColor;
 	margin: 5px;
 	padding: 5px;
 	margin-bottom: 10px;
@@ -639,7 +640,7 @@ footer {
 }
 .file_card {
 	position: relative;
-	background-color: #bdf;
+	background-color: $mainElementColor;
 	margin: 5px;
 	padding: 5px;
 	margin-bottom: 10px;
