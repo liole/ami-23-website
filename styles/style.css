@@ -1,19 +1,19 @@
 body {
 	position: relative;
 	background-color: $backgroundColor;
-	font-family: 'Segoe UI Light';
+	font-family: 'Segoe Print';
 	width: 900px;
 	margin: auto;
 	margin-bottom: 5px;
 	border-right: 1px solid #aaa;
-	border-left: 1px solid #00f;
-	color: $mainTextColor;
+	border-left: 1px solid #484848;
+	color: #000000;
 }
 nav {
 	position: fixed;
 	top: 0px;
 	width: 600px;
-	background-color: #025;
+	background-color: #585858;
 	padding-left: 15px;
 	transition: width .5s;
 	height: 50px;
@@ -22,19 +22,19 @@ nav {
 }
 nav .menu {
 	display: inline-block;
-	color: #fff;
+	color: #e6e6e6;
 	text-decoration: none;
 	font-size: 16pt;
 	padding: 10px;
 }
 nav .menu:hover {
-	background-color: #237;
+	background-color: #484848;
 	color: #ffd;
 	border-bottom: solid 3px #55f;
 	padding-bottom: 7px;
 }
 nav .sel {
-	background-color: #046;
+	background-color: #282828;
 	border-bottom: solid 3px #ff0;
 	padding-bottom: 7px;
 }
@@ -44,7 +44,7 @@ aside {
 	padding: 10px;
 	margin-bottom: 0px;
 	float: right;
-	background-color: $backgroundColor;/*
+	background-color: #eeeeee;/*ЛНУ 23 фото бекграунд колір
 	border-left: 1px dashed #00f;*/
 	z-index: 3;
 }
@@ -54,21 +54,21 @@ footer {
 	padding: 10px;
 	text-align: center;
 	bottom: 0px;
-	color: #fff;
-	background-color: #025;
+	color: #dfdfdf;
+	background-color: #484848;
 	z-index: 3;
 }
 .main {
-	background-color: $mainColor;
+	background-color: #fbcbff;
 	padding: 5px;
-	padding-top: 55px;
+	padding-top: 60px;
 	min-height: 560px;
 	width: 588px;
-	border-right: 1px dashed #00f;
+	border-right: 1px dashed #484848;
 }
 .message {
 	position: relative;
-	background-color: $mainElementColor;
+	background-color: #ffffff;
 	margin: 5px;
 	padding: 5px;
 }
