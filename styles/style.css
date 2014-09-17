@@ -1,6 +1,6 @@
 body {
 	position: relative;
-	background-color: $backgroundColor;
+	background-color: white;
 	font-family: 'Segoe Print';
 	width: 900px;
 	margin: auto;
