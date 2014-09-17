@@ -1,9 +1,13 @@
 <?php
 	include 'template.php';
 
+// 		$sql = file_get_contents('Dump20140825.sql');
+ //  	if(!$result = $db->query($sql)) die('There was an error running the query [' . $db->error . ']');
+
 	if (isset($_GET["new"]))
 	{
 		$sql = '';
+		$date = time();
 		if ($_GET["new"] == "message")
 		{
 			/*
@@ -22,7 +26,7 @@
 			$sql = "INSERT INTO messages (user,text,date,attach,attach_id) VALUES (
 				'".$_COOKIE["user"]."', 
 				'".str_replace("'", "''", $_POST["text"])."', 
-				'".date("Y-m-d H:i:s")."', 
+				'".date("Y-m-d H:i:s", $date)."', 
 				'".$_POST["attach_type"]."', 
 				'".$_POST["attach_ID"]."')";
 		}
@@ -32,8 +36,9 @@
 				".$_POST["msg_id"].", 
 				'".$_COOKIE["user"]."', 
 				'".str_replace("'", "''", $_POST["text"])."', 
-				'".date("Y-m-d H:i:s")."')";
+				'".date("Y-m-d H:i:s", $date)."')";
 		}
+		file_put_contents ("lastMsgTime", $date);
 		if(!$result = $db->query($sql)) die('There was an error running the query [' . $db->error . ']');
 		else {
 			header('Location: '.$_SERVER['HTTP_REFERER']);
@@ -80,7 +85,7 @@
 		exit;
 	}
 	
-	printTop("Головна");
+	printTop("Новини");
 ?>
 	<?php
 		include 'includes/messages.php';
@@ -197,9 +202,9 @@
 	?>
 <!-- NEEDS REWRITE -->
 <script type="text/javascript">
-	window.lastMsgTime = <?php include 'lastMsgTime.php'; ?>; 
+	window.lastMsgTime = <?php include 'lastMsgTime'; ?>; 
 	window.isActive = <?php echo ((isset($_GET["wasActive"]))?$_GET["wasActive"]:'true'); ?>;
-	<?php if (!isset($_GET["discuss"])) echo "setInterval(function(){checkNewMsg()}, 10000);"; ?>
+	<?php if (!isset($_GET["discuss"])) echo "setInterval(function(){checkNewMsg()}, 30000);"; ?>
 	<?php if (isset($_GET["newMsg"])) {
 		echo "var notify = new Audio('images/notify.wav'); notify.play();\n";
 		echo "window.history.pushState('', 'New message', '/');";

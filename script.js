@@ -6,6 +6,26 @@ function moreMenu (elem)
 	elem.style.display = 'none';
 	return false;
 }
+var prevHeight;
+function moreMenu2_up (elem)
+{
+	nav = document.getElementsByTagName('nav')[0];
+	nav.style.zIndex = 2;
+	nav.style.height = prevHeight;
+	elem.innerHTML = '&#x25BC;';
+	elem.style.paddingBottom = '0px';
+	elem.onclick = function(){moreMenu2(this)};
+}
+function moreMenu2 (elem)
+{
+	nav = document.getElementsByTagName('nav')[0];
+	nav.style.zIndex = 5;
+	prevHeight = nav.style.height;
+	nav.style.height = 'auto';
+	elem.innerHTML = '&#x25B2;';
+	elem.style.paddingBottom = '5px';
+	elem.onclick = function(){moreMenu2_up(this)};
+}
 function checkPass()
 {
 	if (document.getElementById('password').value==document.getElementById('conf_password').value)
@@ -36,6 +56,11 @@ window.textareaActive = false;
 window.onfocus = function () { 
   window.isActive = true; 
   changeIcon ('favicon.ico');
+  if (window.ChatNewNum > 0)
+  {
+	window.ChatNewNum = 0;
+	document.title = 'Чат - ПМІ-23';;
+  }
 }; 
 window.onblur = function () { 
   window.isActive = false; 
@@ -56,7 +81,7 @@ function checkNewMsg()
 		if (lastMsgTimeNow != window.lastMsgTime && !window.textareaActive)
 			location = '?wasActive='+window.isActive+'&newMsg';
     }}
-	xmlhttp.open("GET","lastMsgTime.php",true);
+	xmlhttp.open("GET","lastMsgTime",true);
 	xmlhttp.send();
 	
 }

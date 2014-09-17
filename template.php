@@ -45,18 +45,25 @@
 		<link href="styles/fonts.css" rel="stylesheet" type="text/css">
 		<link href="process_css.php?file=style.css&theme=<?php echo $_COOKIE["theme"]; ?>" rel="stylesheet" type="text/css" />
 		<?php if ($style) echo '<link href="process_css.php?file='.$style.'&theme='.$_COOKIE["theme"].'" rel="stylesheet" type="text/css" />'; ?>
-		<script type="text/javascript" src="script.js"></script>
-		<?php if ($title == 'Фотогалерея' || $title == 'Головна') { ?>
-		<!-- FANCYBOX -->
+		<meta name="viewport" content="width=device-width" />
+		<link href="styles/media-style.css" rel="stylesheet" type="text/css">
 		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script type="text/javascript" src="script.js"></script>
+		<script src="jquery.js"></script>
+		<?php if ($title == 'Фотогалерея' || $title == 'Новини') { ?>
+		<!-- FANCYBOX -->
 		<link rel="stylesheet" href="fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
 		<script type="text/javascript" src="fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 		<script type="text/javascript">
 			$(document).ready(function() {
-				$(".fancybox").fancybox({padding:5,openEffect:'elastic',closeEffect:'elastic'});
+				$(".fancybox").fancybox({padding:5,openEffect:'elastic',closeEffect:'elastic',afterLoad: function() {this.inner.append("<a href='"+this.href+"' class=\"image_download\" download></a>");}});
 			});
 		</script>
 
+		<?php } 
+			if ($title == 'Чат') { ?>
+			<script src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
+			<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script>
 		<?php } ?>
 	</head>
 	<body>
@@ -73,6 +80,7 @@
 					echo '<img src="images/lock.png" class="logout" onClick="location = \'login.php?logout\'">';
 				}
 			?>
+			<div id="more_menu2" onClick='moreMenu2(this);'>&#x25BC;</div>
 		</nav>
 		<aside>
 			<img src="images/ami23.png" style="width: 100%">
@@ -127,6 +135,23 @@
 				setcookie("first_alert", 'true', time()+60*60*24*30*3);
 			}
 		?>
+		<a href="#" class="scrollToTop"></a>
+		<script type="text/javascript">
+			//Check to see if the window is top if not then display button
+			$(window).scroll(function(){
+				if ($(this).scrollTop() > 100) {
+					$('.scrollToTop').fadeIn();
+				} else {
+					$('.scrollToTop').fadeOut();
+				}
+			});
+			
+			//Click event to scroll to top
+			$('.scrollToTop').click(function(){
+				$('html, body').animate({scrollTop : 0},800);
+				return false;
+			});
+		</script>
 		<footer>
 			Copyright &copy; 2014
 		</footer>
