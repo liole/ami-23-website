@@ -1,19 +1,24 @@
 body {
 	position: relative;
-	background-color: white;
+<<<<<<< HEAD
+	background-color: $backgroundColor;
 	font-family: 'Segoe Print';
+=======
+	background-color: $backgroundColor;
+	font-family: 'Segoe UI Light';
+>>>>>>> b4b38769c0bcdc3b684331a5c299f5f6ba64071c
 	width: 900px;
 	margin: auto;
 	margin-bottom: 5px;
 	border-right: 1px solid #aaa;
-	border-left: 1px solid #484848;
-	color: #000000;
+	border-left: 1px solid #00f;
+	color: $mainTextColor;
 }
 nav {
 	position: fixed;
 	top: 0px;
 	width: 600px;
-	background-color: #585858;
+	background-color: #025;
 	padding-left: 15px;
 	transition: width .5s;
 	height: 50px;
@@ -22,19 +27,19 @@ nav {
 }
 nav .menu {
 	display: inline-block;
-	color: #e6e6e6;
+	color: #fff;
 	text-decoration: none;
 	font-size: 16pt;
 	padding: 10px;
 }
 nav .menu:hover {
-	background-color: #484848;
+	background-color: #237;
 	color: #ffd;
 	border-bottom: solid 3px #55f;
 	padding-bottom: 7px;
 }
 nav .sel {
-	background-color: #282828;
+	background-color: #046;
 	border-bottom: solid 3px #ff0;
 	padding-bottom: 7px;
 }
@@ -62,7 +67,7 @@ aside {
 	padding: 10px;
 	margin-bottom: 0px;
 	float: right;
-	background-color: #eeeeee;/*ЛНУ 23 фото бекграунд колір
+	background-color: $backgroundColor;/*
 	border-left: 1px dashed #00f;*/
 	z-index: 3;
 }
@@ -72,21 +77,21 @@ footer {
 	padding: 10px;
 	text-align: center;
 	bottom: 0px;
-	color: #dfdfdf;
-	background-color: #484848;
+	color: #fff;
+	background-color: #025;
 	z-index: 3;
 }
 .main {
-	background-color: #fbcbff;
+	background-color: $mainColor;
 	padding: 5px;
-	padding-top: 60px;
+	padding-top: 55px;
 	min-height: 560px;
 	width: 588px;
-	border-right: 1px dashed #484848;
+	border-right: 1px dashed #00f;
 }
 .message {
 	position: relative;
-	background-color: #ffffff;
+	background-color: $mainElementColor;
 	margin: 5px;
 	padding: 5px;
 }

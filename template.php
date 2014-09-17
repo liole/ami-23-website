@@ -17,10 +17,9 @@
 	}
 	
 	
-	$db = new mysqli('localhost', 'root', '', 'ami'); 
+	$db = new mysqli('localhost', 'ami_user', 'Pa$$word', 'ami'); 
 	if($db->connect_errno > 0)
 		die('Unable to connect to database [' . $db->connect_error . ']');
-	$db->set_charset('UTF8');
 	
 	/*** CURRENT USER INFO ***/
 	if (isset($_COOKIE["user"]))
