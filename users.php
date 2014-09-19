@@ -70,13 +70,15 @@
 		<div class="user_card">
 			<div class="user_avatar"><img src="images/avatars/'.$avatar.'"></div>
 			<div class="user_info">
-				<div class="user_birthday">'.$birthday.'</div>
 				<div class="user_name">'.$num.'. '.$fullname.'</div>
-				<div class="user_phone">'.$row["phone"].'</div>
-				<div class="user_skype">'.$row["skype"].'</div>
-				<div class="user_email">'.$row["email"].'</div>
 			</div>
 		</div>';
+
+			// <div class="user_birthday">'.$birthday.'</div>
+			// <div class="user_phone">'.$row["phone"].'</div>
+			// <div class="user_skype">'.$row["skype"].'</div>
+			// <div class="user_email">'.$row["email"].'</div>
+
 			}
 		} else {
 			?>
@@ -114,3 +116,12 @@
 		*/
 	?>
 <?php printBottom(); ?>
+
+<script>
+
+function showUserInfoDialog()
+
+</script>
+
+<!-- TODO: Create UserInfoDialog. It should appear when someone clicks on the user name and show additional information
+		   about this user -->
