@@ -8,7 +8,8 @@
 		">" => "#' onClick='return moreMenu(this);' id='more_menu1",
 		"Чат" => "chat.php",
 		"Користувачі" => "users.php",
-		"Календар" => "calendar.php",
+		// "Календар" => "calendar.php",
+		"Роман" => "roman.php",
 		"..." => "..."
 	);
 
