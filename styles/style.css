@@ -1,12 +1,7 @@
 body {
 	position: relative;
-<<<<<<< HEAD
-	background-color: $backgroundColor;
-	font-family: 'Segoe Print';
-=======
 	background-color: $backgroundColor;
 	font-family: 'Segoe UI Light';
->>>>>>> b4b38769c0bcdc3b684331a5c299f5f6ba64071c
 	width: 900px;
 	margin: auto;
 	margin-bottom: 5px;
