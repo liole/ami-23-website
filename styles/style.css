@@ -1,19 +1,22 @@
 body {
 	position: relative;
-	background-color: $backgroundColor;
-	font-family: 'Segoe UI Light';
+	color:black;
+	background-color:white;
+	background-image:url(images/background.jpg);
+	background-size: auto 100%;
+	font-family: 'Calibri';
 	width: 900px;
 	margin: auto;
-	margin-bottom: 5px;
-	border-right: 1px solid #aaa;
-	border-left: 1px solid #00f;
+	margin-bottom: 0px;
+	border-right: 3px solid #002533;
+	border-left: 0px solid #00f;
 	color: $mainTextColor;
 }
 nav {
 	position: fixed;
 	top: 0px;
 	width: 600px;
-	background-color: #025;
+	background-color: #014058;
 	padding-left: 15px;
 	transition: width .5s;
 	height: 50px;
@@ -28,13 +31,13 @@ nav .menu {
 	padding: 10px;
 }
 nav .menu:hover {
-	background-color: #237;
+	background-color: #477099;
 	color: #ffd;
 	border-bottom: solid 3px #55f;
 	padding-bottom: 7px;
 }
 nav .sel {
-	background-color: #046;
+	background-color: #3879a4;
 	border-bottom: solid 3px #ff0;
 	padding-bottom: 7px;
 }
@@ -57,12 +60,13 @@ nav #more_menu2:hover {
 	color: #00f;
 }
 aside {
-	position: relative;
+	/osition: relative;
 	width: 280px;
 	padding: 10px;
 	margin-bottom: 0px;
 	float: right;
-	background-color: $backgroundColor;/*
+	/*background-color: white;*/
+	opacity: 1;/*
 	border-left: 1px dashed #00f;*/
 	z-index: 3;
 }
@@ -73,16 +77,16 @@ footer {
 	text-align: center;
 	bottom: 0px;
 	color: #fff;
-	background-color: #025;
+	background-color: #014058;
 	z-index: 3;
 }
 .main {
-	background-color: $mainColor;
+	background-color: #cff2e7;
 	padding: 5px;
 	padding-top: 55px;
 	min-height: 560px;
 	width: 588px;
-	border-right: 1px dashed #00f;
+	border-right: 0px dashed #00f;
 }
 .message {
 	position: relative;
@@ -148,7 +152,7 @@ footer {
 	height: 46px;
 	overflow: hiden;
 	min-height: 46px;
-	font-family: 'Segoe UI Light';
+	font-family: 'Calibri';
 	font-size: 12pt;
 	margin-left: 55px;
 	margin-bottom: 0px;
@@ -180,7 +184,7 @@ footer {
 	margin-bottom: 10px;
 }
 .login_input {
-	font-family: 'Segoe UI Light';
+	font-family: 'Calibri';
 	font-size: 16pt;
 	padding: 5px;
 	margin: 0px;
@@ -188,7 +192,7 @@ footer {
 	width: 260px;
 }
 .login_submit {
-	font-family: 'Segoe UI Light';
+	font-family: 'Calibri';
 	font-size: 16pt;
 	padding: 5px;
 	margin: 0px;
@@ -198,7 +202,7 @@ footer {
 	border: 1px solid #77f;
 }
 .login_msg {
-	color: #c00;
+	color: #000000;
 	margin-bottom: 5px;
 }
 .logout {
@@ -301,7 +305,7 @@ footer {
 .user_edit_form input {
 	width: 200px;
 	padding: 3px;
-	font-family: 'Segoe UI Light';
+	font-family: 'Calibri';
 	font-size: 14pt;
 	margin: 2px;
 }
@@ -418,18 +422,18 @@ footer {
 	border-radius: 20px;
 }
 .subj_aud.pr {
-	background: #bbf;
+	background: #b6ffe9;
 }
 .subj_aud.lek {
-	background: #bfb;
+	background: #b6ffe9;
 }
 .subj_time {
 	float: right;
-	color: #00f;
+	color: #000000;
 }
 .subj hr {
 	border: none;
-	border-bottom: 1px solid #00f;
+	border-bottom: 1px solid #000;
 	margin-left: 35px;
 }
 .tomorrow_schd {
@@ -450,17 +454,19 @@ footer {
 	background-image: url('images/pdf.png');
 	background-repeat: no-repeat;
 	background-size: 100%;
-	padding: 3px;
+	padding: 1px;
 	padding-top: 75px;
 	font-size: 10pt;
-	background-color: #79f;
+	/*background-color: #fff*/
 	float: right;
 	margin: 5px;
 	cursor: pointer;
 	text-align: center;
 }
 .download_schd_pdf:hover{
-	background-color: #57f;
+	background-color: #fff;
+	opacity: 0.7;
+
 }
 .poll_card {
 	position: relative;
@@ -489,7 +495,7 @@ footer {
 	vertical-align: middle;
 }
 .answered {
-	color: #00f;
+	color: #008a68;
 	font-weight: bold;
 }
 .answer_text:hover {
@@ -519,7 +525,7 @@ footer {
 }
 .create_poll_title {
 	font-size: 16pt;
-	font-family: 'Segoe UI Light';
+	font-family: 'Calibri';
 	padding: 3px;
 	width: 550px;
 	margin: 5px;
@@ -534,7 +540,7 @@ footer {
 .create_poll_ans {
 	display: block;
 	font-size: 14pt;
-	font-family: 'Segoe UI Light';
+	font-family: 'Calibri';
 	padding: 3px;
 	width: 400px;
 	margin: 3px;
@@ -547,10 +553,10 @@ footer {
 	padding: 5px;
 	padding-left: 15px;
 	padding-right: 15px;
-	background-color: #7fa;
+	background-color: #96ecd7;
 	cursor: pointer;
 	margin-left: 55px;
-	border: 1px solid #0f0;
+	border: 1px solid #002533;
 	color: #00f;
 }
 .create_poll_add:hover {
@@ -572,15 +578,17 @@ footer {
 	padding: 5px;
 	font-size: 16pt;
 	color: #00b;
-	background-color: #79f;
+	background-color: #b5e5db;
+	/*opacity: 0.6;*/
 	cursor: pointer;
 }
 .new_poll_btn:hover {
-	background-color: #57f;
+	background-color: #fff;
+	opacity: 0.5;
 }
 .album_cover {
 	position: relative;
-	background-color: #75f;
+	background-color: #0075a1;
 	width: 180px;
 	padding: 5px;
 	padding-bottom: 2px;
@@ -593,14 +601,15 @@ footer {
 	cursor: pointer;
 }
 .album_cover:hover {
-	background-color: #55d;
+	background-color: #017fb9;
+	opacity: 0.6;
 }
 .album_cover:before {
     content: '';
     position: absolute;
     top: 0; right: 0;
-    border-top: 20px solid #acf;
-    border-left: 20px solid #44f;
+    border-top: 20px solid #00618e;
+    border-left: 20px solid #017fb9;
     width: 0;
 }
 .album_cover img {
@@ -611,12 +620,13 @@ footer {
 	padding: 5px;
 	font-size: 16pt;
 	color: #00b;
-	background-color: #79f;
+	background-color: #b4e5da;
 	cursor: pointer;
 	margin: 5px;
 }
 .new_album:hover {
-	background-color: #57f;
+	background-color: #fff;
+	opacity: 0.6;
 }
 .attach_btn {
 	position: absolute;

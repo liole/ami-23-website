@@ -9,7 +9,7 @@
 		"Чат" => "chat.php",
 		"Користувачі" => "users.php",
 		// "Календар" => "calendar.php",
-		"Роман" => "roman.php",
+		//"Роман" => "roman.php",
 		"..." => "https://www.facebook.com/groups/1461565790799095/"
 	);
 
