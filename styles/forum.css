@@ -1,0 +1,98 @@
+.forum_topic {
+	display: table;
+	position: relative;
+	background-color: $mainElementColor;
+	margin: 5px;
+	padding: 5px;
+	border-left: double 5px #009;
+	width: 100%;
+	width: calc(100% - 25px);
+}
+.forum_topic:hover {
+	background-color: #9bf;
+}
+.forum_topicAbout {
+	display: table-cell;
+	cursor: pointer;
+}
+.forum_topicTitle {
+	font-size: 14pt;
+	font-weight: bold;
+	color: #037;
+}
+.forum_topicDeskr {
+	color: #555;
+}
+.forum_topicPosts {
+	display: table-cell;
+	width: 50px;
+	font-size: 16pt;
+	font-weight: bold;
+	vertical-align: middle;
+	text-align: center;
+}
+.forum_topicPosts:after {
+	content: 'posts';
+	display: block;
+	font-size: 9pt;
+	font-weight: normal;
+	color: #888;
+	margin-top: -5px;
+}
+.forum_topicLastMsg {
+	display: table-cell;
+	width: 175px;
+	font-style: italic;
+}
+.forum_topicLastDate {
+	font-size: 10pt;
+	font-style: normal;
+}
+.forum_message {
+	display: table;
+	position: relative;
+	background-color: $mainElementColor;
+	margin: 5px;
+	width: 98%;
+	width: calc(100% - 10px);
+}
+.forum_messageAbout {
+	display: table-cell;
+	vertical-align: top;
+	width: 100px;
+	text-align: center;
+	border-right: dashed 1px #00f;
+}
+.forum_messageAuthor {
+	font-size: 11pt;
+}
+.forum_messageDate {
+	font-size: 9pt;
+}
+.forum_messageAvatar {
+	width: 50px;
+	border: solid 1px #fff;
+	margin: 3px;
+}
+.forum_messageText {
+	display: table-cell;
+	vertical-align: top;
+	padding: 5px;
+}
+.msgText img {
+	width: 100%;
+}
+.forum_textarea {
+	width: 100%;
+	min-height: 50px
+}
+.download_btn {
+	display: inline-block;
+	background-image: url('images/download-icon.png');
+	text-decoration: none;
+	background-size: 100%;
+	width: 24px;
+	height: 24px;
+	padding: 5px;
+	vertical-align:middle;
+}
