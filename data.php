@@ -2,15 +2,16 @@
 	$menu = array (
 		"Новини" => "index.php",
 		"Файли" => "files.php",
-		"Фотогалерея" => "photos.php",
-		"Розклад" => "schedule.php",
-		"Опитування" => "polls.php",
+		"Фото" => "photos.php",
+		"Корист." => "users.php",
+		"Календар" => "calendar.php",
+		"Форум" => "forum.php",
 		">" => "#' onClick='return moreMenu(this);' id='more_menu1",
 		"Чат" => "chat.php",
-		"Користувачі" => "users.php",
-		"Календар" => "calendar.php",
+		"Опит." => "polls.php",
+		"Розклад" => "schedule.php",
 		"..." => "..."
-	);
+	);// needs to be replaced by icons
 
 	$month = array (
 		1 => "січня",

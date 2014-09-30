@@ -1,5 +1,5 @@
 <?php
-	include_once 'template.php';
+	include_once __DIR__.'/../template.php';
 	
 	function includeFileByName ($name, $id, $embed = false)
 	{	

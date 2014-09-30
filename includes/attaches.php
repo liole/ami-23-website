@@ -1,5 +1,6 @@
 <?php
-	include_once 'template.php';
+	include_once __DIR__.'/../template.php';
+	
 	function attachPoll ($id)
 	{
 		include_once 'includes/polls.php';

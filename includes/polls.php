@@ -1,6 +1,6 @@
 <?php
-	include_once 'template.php';
-	include_once 'userNames.php';
+	include_once __DIR__.'/../template.php';
+	include_once __DIR__.'/userNames.php';
 	
 	function includePoll ($row, $embed = false)
 	{

@@ -1,7 +1,7 @@
 <?php
-	include_once 'template.php';
-	include 'includes/attaches.php';
-	include_once 'includes/userNames.php';
+	include_once __DIR__.'/../template.php';
+	include_once __DIR__.'/attaches.php';
+	include_once __DIR__.'/userNames.php';
 		
 	function replace_links ($source)
 	{
