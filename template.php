@@ -43,9 +43,9 @@
 		<?php if ($style) echo '<link href="process_css.php?file='.$style.'&theme='.$_COOKIE["theme"].'" rel="stylesheet" type="text/css" />'; ?>
 		<meta name="viewport" content="width=device-width" />
 		<link href="styles/media-style.css" rel="stylesheet" type="text/css">
-		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-		<script type="text/javascript" src="script.js"></script>
+		<!--<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>-->
 		<script src="jquery.js"></script>
+		<script type="text/javascript" src="script.js"></script>
 		<?php if ($title == 'Фотогалерея' || $title == 'Новини') { ?>
 		<!-- FANCYBOX -->
 		<link rel="stylesheet" href="fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />

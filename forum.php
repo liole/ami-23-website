@@ -14,6 +14,17 @@
 			exit;
 		}
 	}
+	if (isset($_GET["add_topic"]))
+	{
+		$sql = "INSERT INTO forum_topics (title, description) VALUES (
+			'".str_replace("'", "''", $_POST["topic_title"])."', 
+			'".str_replace("'", "''", $_POST["topic_description"])."')";
+		if(!$result = $db->query($sql)) die('There was an error running the query [' . $db->error . ']');
+		else {
+			header('Location: forum.php#topic/'.$db->insert_id);
+			exit;
+		}
+	}
 	//TODO: messages edit/delete + topics add/delete
 	/* ... basic operations with forum ...
 	if (isset($_GET["delete"]))
@@ -59,6 +70,14 @@
 	printTop("Форум", "forum.css");
 ?>
 <div ng-app="" ng-controller="forumController"> 
+	<h2 class="forum_title">{{ title }}
+	<div id="forum_add_topic" onClick="openAddPanel()" ng-if="!displayTopic">+<br>
+	<form action="forum.php?add_topic" method="post">
+		<input type="text" placeholder="Назва нової теми" name="topic_title" style="width: 200px"/>
+		<input type="text" placeholder="Опис..." name="topic_description" style="width: 200px"/>
+		<input type="submit" style="display: none;">
+	</form></div></h2>
+	<h3 class="forum_title_descr">{{ description }}</h3>
 	<!--Main page with list of topics-->
 	<div class="forum_topic" ng-click="openTopic(topic.id);" ng-repeat="topic in topics" >
 		<div class="forum_topicAbout">
@@ -89,7 +108,8 @@
 </div>
 
 
-<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+<!--<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>-->
+<script src="angular.js"></script>
 <script>
 	function forumController($scope,$http,$sce) {
 		$http.get("includes/userNames.php?output=true")
@@ -99,18 +119,25 @@
 			$http.get("includes/getForumData.php?messages="+$scope.topicID+"&from="+currLoaded+"&limit="+loadLimit)
 				.success(function(response) {$scope.messages = $scope.messages.concat(response); currLoaded+=loadLimit});
 		};
+		
 		window.loadHash = function () {
 			var url = location.hash.substr(1).split("/");
 			if (url[0] == '') {
 				$scope.messages = {};
 				$scope.displayTopic = false;
 				$scope.topicID = 0;
+				$scope.title = 'Форум';
+				$scope.description = '';
 				$http.get("includes/getForumData.php?topics")
 					.success(function(response) {$scope.topics = response;});
 			} else if (url[0] == 'topic') {
 				$scope.topics = {};
 				$scope.displayTopic = true;
 				$scope.topicID = url[1];
+				$http.get("includes/getForumData.php?title="+url[1])
+					.success(function(response) {
+						$scope.title = response.title;
+						$scope.description = response.description;});
 				$scope.messages = [];
 				window.loadLimit = 2;
 				window.currLoaded = 0;
@@ -129,6 +156,14 @@
 		$scope.renderHtml = function(html_code) {
 			return $sce.trustAsHtml(html_code);
 		};
+	}
+	function openAddPanel()
+	{
+		var panel = document.getElementById ('forum_add_topic');
+		panel.style.width = '225px';
+		panel.style.height = '110px';
+		panel.style.backgroundColor = '#fff';
+		panel.style.color = '#009';
 	}
 </script>
 <?php printBottom(); ?>

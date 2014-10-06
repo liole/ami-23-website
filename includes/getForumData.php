@@ -45,4 +45,15 @@
 		}
 		echo json_encode ($messages);
 	}
+	if (isset($_GET["title"]))
+	{
+		$sql = "SELECT title, description FROM forum_topics WHERE id = ".$_GET["title"];
+		if(!$result = $db->query($sql)) die('{ "error" : "' . $db->error . '" }');
+		while ($row = $result->fetch_assoc())
+			$title_data = array(
+				"title" => $row["title"],
+				"description" => $row["description"]
+			);
+		echo json_encode ($title_data);
+	}
 ?>
